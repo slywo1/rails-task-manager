@@ -1,0 +1,11 @@
+<h1>Tasks</h1>
+
+<% @tasks.each do |task| %>
+  <p><%= link_to task.title, task_path(task.id) %> &#8211 <%= task.details %> &#8211 <% if task.completed %>
+    Done
+    <% else %>
+    Still not done
+    <% end %>
+  </p>
+  <%= link_to "delete", task_path(task.id), method: "delete"%>
+<% end %>
